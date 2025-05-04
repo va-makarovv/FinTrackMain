@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_welcome_st"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_welcome_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_welcome_up"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vk_logo_black___white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        app:layout_constraintTop_toBottomOf="@id/gl_welcome_up"
+        app:layout_constraintWidth_percent="0.22"
+        android:layout_marginTop="52dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+
+        android:layout_marginTop="44dp"
+        android:textColor="@color/black"
+        android:text="Finance\nTracker"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="12sp"
+        android:textColor="@color/wrongData"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+
+        app:layout_constraintBottom_toTopOf="@id/cv_logPass"
+         />
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_logPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/et"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_forgotpass"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:hint="E-mail or username"
+                    android:padding="0dp"
+                    android:textColorHint="@color/et"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/et"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/et"
+                app:boxBackgroundMode="none"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="0dp"
+                    android:textColorHint="@color/et"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tv_forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="148dp"
+        android:clickable="true"
+        android:padding="2dp"
+        android:text="Forgot password?"
+        android:textColor="@color/picked"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/bt_signin"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_signin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        app:layout_constraintBottom_toTopOf="@id/tv_or"
+        android:layout_marginBottom="32dp"
+        android:text="Sign in"
+        android:textSize="16sp"
+        android:background="@drawable/background_bt_main"
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textSize="14sp"
+        android:textColor="@color/et"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_signup"/>
+
+    <TextView
+        android:id="@+id/tv_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="Sign up"
+        android:textColor="@color/picked"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_welcome_end"
+        app:layout_constraintStart_toStartOf="@id/gl_welcome_st"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

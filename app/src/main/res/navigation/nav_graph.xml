@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.fintrackmain.fragments.auth.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signingUp"
+            app:destination="@id/signingUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/signingUp"
+        android:name="com.example.fintrackmain.fragments.auth.SigningUpFragment"
+        android:label="fragment_signing_up"
+        tools:layout="@layout/fragment_signing_up" >
+        <action
+            android:id="@+id/action_signingUp_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionSyncFragment"
+        android:name="com.example.fintrackmain.fragments.auth.TransactionSyncFragment"
+        android:label="fragment_transaction_sync"
+        tools:layout="@layout/fragment_transaction_sync" />
+    <fragment
+        android:id="@+id/pinSetUpFragment"
+        android:name="com.example.fintrackmain.fragments.auth.PinSetUpFragment"
+        android:label="fragment_pin_set_up"
+        tools:layout="@layout/fragment_pin_set_up" />
+    <fragment
+        android:id="@+id/pinLogInFragment"
+        android:name="com.example.fintrackmain.PinLogInFragment"
+        android:label="fragment_pin_log_in"
+        tools:layout="@layout/fragment_pin_log_in" />
+</navigation>
