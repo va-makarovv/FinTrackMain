@@ -100,23 +100,16 @@ public class WelcomeFragment extends Fragment {
         } else {
             resetErrorState();
             binding.tvError.setVisibility(View.GONE);
-            // Proceed with sign in
         }
     }
 
     private void showErrorState() {
-        // Change stroke color
         binding.cvLogPass.setStrokeColor(ContextCompat.getColor(requireContext(), R.color.wrongData));
-
-        // Change background color inside stroke
         binding.cvLogPass.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.wrongDataFont));
-
-        // Change line color
         binding.line.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.wrongData));
     }
 
     private void resetErrorState() {
-        // Reset to default colors
         binding.cvLogPass.setStrokeColor(ContextCompat.getColor(requireContext(), R.color.et));
         binding.cvLogPass.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white));
         binding.line.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.et));

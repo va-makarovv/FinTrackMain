@@ -21,12 +21,19 @@
         <action
             android:id="@+id/action_signingUp_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_signingUp_to_transactionSyncFragment"
+            app:destination="@id/transactionSyncFragment" />
     </fragment>
     <fragment
         android:id="@+id/transactionSyncFragment"
         android:name="com.example.fintrackmain.fragments.auth.TransactionSyncFragment"
         android:label="fragment_transaction_sync"
-        tools:layout="@layout/fragment_transaction_sync" />
+        tools:layout="@layout/fragment_transaction_sync" >
+        <action
+            android:id="@+id/action_transactionSyncFragment_to_allowSMSFragment"
+            app:destination="@id/allowSMSFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pinSetUpFragment"
         android:name="com.example.fintrackmain.fragments.auth.PinSetUpFragment"
@@ -37,4 +44,9 @@
         android:name="com.example.fintrackmain.PinLogInFragment"
         android:label="fragment_pin_log_in"
         tools:layout="@layout/fragment_pin_log_in" />
+    <fragment
+        android:id="@+id/allowSMSFragment"
+        android:name="com.example.fintrackmain.AllowSMSFragment"
+        android:label="fragment_allowsms"
+        tools:layout="@layout/fragment_allowsms" />
 </navigation>
